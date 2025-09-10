@@ -74,5 +74,10 @@ app.post('/api/lesson', async (req, res) => {
 
 app.get('/api/health', (req, res) => res.json({ ok: true, now: new Date().toISOString() }));
 
+// Servir index.html al abrir "/"
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
