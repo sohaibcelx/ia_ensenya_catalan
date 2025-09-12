@@ -63,7 +63,7 @@ app.post('/api/lesson', async (req, res) => {
       return res.json({ ok: true, text });
     }
 
-    const mock = `Mock lesson (${level} — ${topic} — ${mode})\n\nExplicació breu: Aquesta és una lliçó de prova per practicar salutacions en català.\n\nFrases d'exemple:\n1. Hola — Hello\n2. Bon dia — Good morning\n3. Com estàs? — How are you?\n4. Em dic Anna — My name is Anna\n5. Moltes gràcies — Thank you very much\n6. Fins aviat — See you soon\n\nExercici (Gramàtica): Conjuga el ver \"ser\" en present per: jo, tu, ell/ella.\nExercici (Parlar): Practica la salutació amb un company/a durant 2 minuts.`;
+    const mock = `Mock lesson (${level} — ${topic} — ${mode})\n\nExplicació breu: Aquesta és una lliçó de prova per practicar salutacions en català.\n\nFrases d'exemple:\n1. Hola — Hello\n2. Bon dia — Good morning\n3. Com estàs? — How are you?\n4. Em dic Anna — My name is Anna\n5. Moltes gràcies — Thank you very much\n6. Fins aviat — See you soon\n\nExercici (Gramàtica): Conjuga el ver "ser" en present per: jo, tu, ell/ella.\nExercici (Parlar): Practica la salutació amb un company/a durant 2 minuts.`;
 
     return res.json({ ok: true, text: mock, note: 'No OPENAI_API_KEY set — this is a mock response' });
   } catch (err) {
@@ -71,6 +71,7 @@ app.post('/api/lesson', async (req, res) => {
     res.status(500).json({ ok: false, error: (err && err.message) || String(err) });
   }
 });
+
 // Health check
 app.get('/api/health', (req, res) => res.json({ ok: true, now: new Date().toISOString() }));
 

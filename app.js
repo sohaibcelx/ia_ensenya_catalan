@@ -31,7 +31,6 @@ function App(){
       ),
       React.createElement('button',{onClick:ask,disabled:loading,className:'px-4 py-2 bg-sky-600 text-white rounded disabled:opacity-50'}, loading? 'Carregant...': 'Genera')
     ),
-
     React.createElement('div',{className:'bg-white p-4 rounded shadow min-h-[160px] whitespace-pre-line'}, output || 'Aquí apareixerà la lliçó...')
   );
 }
