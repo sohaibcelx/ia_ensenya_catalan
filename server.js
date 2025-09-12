@@ -71,9 +71,10 @@ app.post('/api/lesson', async (req, res) => {
     res.status(500).json({ ok: false, error: (err && err.message) || String(err) });
   }
 });
-
+// Health check
 app.get('/api/health', (req, res) => res.json({ ok: true, now: new Date().toISOString() }));
 
+// Servir index.html al abrir "/"
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
